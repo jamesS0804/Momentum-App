@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="style.css">
+    <title>Momentum App</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="overlay">
+        <form onsubmit="submit()"; return false>
+            <label for="overlay-name">Hello, what's your name?</label>
+            <input id="overlay-name" type="text" value="" required></input>
+            <input id="overlay-submit" type="submit"></input>
+        </form>
+    </div>
+    <main class="unshow">
+        <section class="widget container">
+            <div class="weather">Widget Here</div>
+        </section>
+        <section class="dashboard container">
+            <div class="clock container">
+                <span id="hours">23</span>
+                <span>:</span>
+                <span id="minutes">59</span>
+                <span class="sesh">
+                    <span id="seconds">59</span>
+                    <span id="session">AM</span>
+                </span>
+            </div>
+            <div class="greeting container">
+                <p>
+                    Good <span id="time-of-day">morning</span>, <span id="user-name">name</span>
+                </p>
+            </div>
+        </section>
+        <section class="todo-list container">
+            Todo
+        </section>
+        <section class="quote container">
+            <p id="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae, iure!</p>
+            <p id="author">John Doe</p>
+        </section>
+        <section class="settings container"> Settings </section>
+    </main>
+    <script src="script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,188 @@
+:root {
+    font-size: 10px;
+    --small: 2.5rem;
+    --medium: 6rem;
+    --large: 15rem;
+    --extra-large: 20rem;
+    --base-color: white;
+    --font-color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    /* background: url(./Images/sunrise.jpg) no-repeat; */
+    background-size: cover;
+    background-position: center;
+    font-size: var(--small);
+    color: var(--font-color);
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--medium);
+}
+
+.overlay > form {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    
+}
+
+#overlay-name {
+    width: 100%;
+    white-space: normal;
+    resize: none;
+    background-color: transparent;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+    border-bottom: 3px solid white;
+    font-size: calc( 0.8 * var(--medium));
+    text-align: center;
+    color: var(--font-color);
+    padding-bottom: 0.1em;
+}
+
+#overlay-name:focus {
+    background-color: transparent;
+    outline: none;
+}
+
+#overlay-submit {
+    margin-top: 5rem;
+    background-color: transparent;
+    border-color: var(--base-color);
+    color: var(--font-color);
+    font-size: var(--small);
+    border-radius: 100vmax;
+    padding: 0.5em 2em 0.5em 2em;
+}
+
+
+
+
+
+
+
+
+
+
+
+main {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-areas: 
+        ". . . . . widget"
+        ". main main main main ."
+        "settings quote quote quote quote todo";
+}
+
+.container {
+    width: 100%;
+    text-align: center;   
+}
+
+.widget {
+    grid-area: widget;
+    place-self: start end;
+    text-align: end;
+    padding: 1.5rem;
+}
+
+.dashboard {
+    grid-area: main;
+    place-self: center;
+    font-weight: bold;
+}
+
+.clock {
+    font-size: var(--extra-large);
+}
+
+#seconds {
+    font-size: var(--medium);
+}
+
+#session {
+    font-size: var(--medium);
+}
+
+.sesh {
+    position: relative;
+    top: -6rem;
+    display: inline-grid;
+}
+
+.greeting {
+    font-size: var(--medium);
+}
+
+.todo-list {
+    grid-area: todo;
+    place-self: end;
+    text-align: end;
+    padding: 1.5rem;
+    cursor: pointer;
+}
+
+.quote {
+    grid-area: quote;
+    place-self: end;
+    padding: 1.5rem;
+    font-style: italic;
+}
+
+#text::before {
+    content: "\" ";
+}
+
+#text::after {
+    content: " \"";
+}
+
+#author {
+    font-size: calc( 0.8 * var(--small));
+}
+
+#author::before {
+    content: "-";
+}
+
+.settings {
+    grid-area: settings;
+    place-self: end;
+    text-align: start;
+    padding: 1.5rem;
+    cursor: pointer;
+}
+
+.unshow {
+    display: none;
+}
+
+.show {
+    display: block;
+}
