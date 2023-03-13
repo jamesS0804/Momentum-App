@@ -1,5 +1,6 @@
 :root {
     font-size: 10px;
+    --base: 10px;
     --small: 2.5rem;
     --medium: 6rem;
     --large: 15rem;
@@ -80,12 +81,45 @@ body {
 
 
 
-/* testing */
 
 
 
+.circle-container {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    margin: .5rem;
+    background: transparent;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.circle-container:hover {
+    background: #ffffff7e;
+}
 
 
+
+.circle {
+    width: .8rem;
+    height: .8rem;
+    margin: .19rem;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.clock > .circle-container {
+    top: 44%;   
+    left: 79%; 
+}
+
+.greeting-container > .circle-container {
+    top: 20%;
+    left: 75%;
+}
 
 
 main {
@@ -119,6 +153,7 @@ main {
 }
 
 .clock {
+    position: relative;
     font-size: var(--extra-large);
 }
 
@@ -136,8 +171,48 @@ main {
     display: inline-grid;
 }
 
+
+.clock-dropdown {
+    position: absolute;
+    background: white;
+    top: 60%;
+    left: 80%;
+    width: 15%;
+    border-radius: 1rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+    gap: 1rem;
+    color: rgb(94, 94, 94);
+    font-size: calc(0.8 * var(--small));
+    opacity: 0;
+}
+
+
+.greeting-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
 .greeting {
     font-size: var(--medium);
+}
+
+.name-change {
+    position: absolute;
+    width: 8%;
+    top: 66%;
+    left: 67%;
+    border-radius: 1rem;
+    background: white;
+    cursor: pointer;
+    color: rgb(94, 94, 94);
+    font-size: calc(0.8 * var(--small));
+    opacity: 0;
 }
 
 .todo-list {
@@ -185,4 +260,8 @@ main {
 
 .show {
     display: block;
+}
+
+.visible {
+    opacity: 1;
 }

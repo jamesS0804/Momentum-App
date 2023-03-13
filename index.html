@@ -34,10 +34,27 @@
                     <span id="seconds">59</span>
                     <span id="session">AM</span>
                 </span>
+                <span class="circle-container unshow ">
+                    <span class="circle"></span>
+                    <span class="circle"></span>
+                    <span class="circle"></span>
+                </span>
+                <div id="clock-dropdown" class="clock-dropdown">
+                    <label for="clock-format">24-hour format</label>
+                    <input id="clock-format" type="checkbox">
+                </div>
             </div>
             <div class="greeting container">
-                <p>
+                <p class="greeting-container">
                     Good <span id="time-of-day">morning</span>, <span id="user-name">name</span>
+                    <span id="greeting-circle" class="circle-container unshow">
+                        <span class="circle"></span>
+                        <span class="circle"></span>
+                        <span class="circle"></span>
+                    </span>
+                    <div class="name-change">
+                        Edit name
+                    </div>
                 </p>
             </div>
         </section>

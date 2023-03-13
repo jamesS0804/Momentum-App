@@ -5,6 +5,19 @@ const overlay_submit = document.querySelector('#overlay-submit')
 const main = document.getElementsByTagName('main')[0]
 let user_name = document.querySelector('#user-name')
 
+const clock_container = document.querySelector('.clock')
+const greeting_container = document.querySelector('.greeting-container')
+const circle_container = document.querySelectorAll('.circle-container')
+
+const clock_circle = circle_container[0]
+const greeting_circle = circle_container[1]
+
+const clock_dropdown = document.querySelector('.clock-dropdown')
+const clock_format = document.querySelector('#clock-format')
+
+const name_change = document.querySelector('.name-change')
+
+
 document.addEventListener('DOMContentLoaded', ()=>{
     if(localStorage.getItem('hasData')){
         main.classList.remove('unshow')
@@ -40,29 +53,39 @@ overlay_name.addEventListener('keypress', (e)=>{
 })
 
 
-
 function getCurrentTime() {
-    const clock_container = document.querySelector('.clock')
     const hour = document.querySelector('#hours')
     const minutes = document.querySelector('#minutes')
     const seconds = document.querySelector('#seconds')
     const session = document.querySelector('#session')
     const time_of_day = document.querySelector('#time-of-day')
 
-    let date = new Date()
+    let date = new Date() 
     let curr_hour = date.getHours()
     let curr_minutes = date.getMinutes()
     let curr_seconds = date.getSeconds()
+    
+    // console.log(date = date.toLocaleString('en-US', {hour12:false}))
+
 
     session.innerHTML = curr_hour > 11 ? "PM" : "AM"
+
+    time_of_day.innerHTML = curr_hour < 12 ? "morning"
+                                        : curr_hour < 18 ? "afternoon"
+                                        : "evening"
+
+    if(!clock_format.checked){
+        curr_hour = curr_hour % 12
+        session.style.display = 'block'
+    } else { 
+        session.style.display = 'none'
+    }
 
     hour.innerHTML = curr_hour < 10 ? '0' + curr_hour : curr_hour 
     minutes.innerHTML = curr_minutes < 10 ? '0' + curr_minutes : curr_minutes 
     seconds.innerHTML = curr_seconds < 10 ? '0' + curr_seconds : curr_seconds 
 
-    time_of_day.innerHTML = curr_hour < 12 ? "morning"
-                                            : curr_hour < 18 ? "afternoon"
-                                            : "evening" 
+     
     setTimeout(()=>{getCurrentTime()},1000)
 }
 
@@ -102,6 +125,33 @@ function changeBackgroundImage() {
 
     setTimeout(()=>{changeBackgroundImage()}, 60000)
 }
+
+
+clock_container.addEventListener('mousemove', ()=>{
+    clock_circle.classList.remove('unshow')
+})
+
+clock_container.addEventListener('mouseout', ()=>{
+    clock_circle.classList.add('unshow')
+})
+
+greeting_container.addEventListener('mousemove', ()=>{
+    greeting_circle.classList.remove('unshow')
+})
+
+greeting_container.addEventListener('mouseout', ()=>{
+    greeting_circle.classList.add('unshow')
+})
+
+clock_circle.addEventListener('click', ()=>{
+    clock_dropdown.classList.toggle('visible')
+})
+
+greeting_circle.addEventListener('click', ()=>{
+    console.log(name_change.classList)
+    name_change.classList.toggle('visible')
+})
+
 
 getCurrentTime()
 getRandomQuote()
