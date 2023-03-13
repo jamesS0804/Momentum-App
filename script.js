@@ -17,6 +17,8 @@ const clock_format = document.querySelector('#clock-format')
 
 const name_change = document.querySelector('.name-change')
 
+const todo_name = document.querySelector('#todo-name')
+const todo_list = document.querySelector('.todolist-container')
 
 document.addEventListener('DOMContentLoaded', ()=>{
     if(localStorage.getItem('hasData')){
@@ -105,7 +107,9 @@ function getRandomQuote() {
     setTimeout(()=>{getRandomQuote()}, 60000)
 }
 
-function changeBackgroundImage() {  
+let i=0;
+
+function changeBackgroundImage(index) {  
     // let authorization = '8I1-nFG0oPbsDbN3MCGILQuV1gySyv2Y7PtbJFKO50E'
     // let url = `https://api.unsplash.com/photos/?client_id=${authorization}&query=lion`
     
@@ -119,11 +123,12 @@ function changeBackgroundImage() {
     //         document.body.style.backgroundImage = `url('${image_url}')`
     //     });
 
-    const images = ['./images/sunrise.jpg']
+    const images = ['./images/sunrise.jpg','./images/bridge.jpg','./images/city.jpg','./images/dunes.png','./images/retro.jpg','./images/space.png']
 
-    document.body.style.backgroundImage = `url('${images[0]}')`
-
-    setTimeout(()=>{changeBackgroundImage()}, 60000)
+    document.body.style.backgroundImage = `url('${images[index]}')`
+    index++
+    index = index < images.length ? index : 0
+    setTimeout(()=>{changeBackgroundImage(index)}, 60000)
 }
 
 
@@ -148,14 +153,17 @@ clock_circle.addEventListener('click', ()=>{
 })
 
 greeting_circle.addEventListener('click', ()=>{
-    console.log(name_change.classList)
     name_change.classList.toggle('visible')
+})
+
+todo_name.addEventListener('click', ()=>{
+    todo_list.classList.toggle('unshow')
 })
 
 
 getCurrentTime()
 getRandomQuote()
-changeBackgroundImage()
+changeBackgroundImage(i)
 
 
 
