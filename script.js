@@ -54,7 +54,6 @@ overlay_name.addEventListener('keypress', (e)=>{
     }
 })
 
-
 function getCurrentTime() {
     const hour = document.querySelector('#hours')
     const minutes = document.querySelector('#minutes')
@@ -131,7 +130,6 @@ function changeBackgroundImage(index) {
     setTimeout(()=>{changeBackgroundImage(index)}, 60000)
 }
 
-
 clock_container.addEventListener('mousemove', ()=>{
     clock_circle.classList.remove('unshow')
 })
@@ -159,7 +157,6 @@ greeting_circle.addEventListener('click', ()=>{
 todo_name.addEventListener('click', ()=>{
     todo_list.classList.toggle('unshow')
 })
-
 
 getCurrentTime()
 getRandomQuote()

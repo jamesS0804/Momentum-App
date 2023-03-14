@@ -79,11 +79,6 @@ body {
     padding: 0.5em 2em 0.5em 2em;
 }
 
-
-
-
-
-
 .circle-container {
     position: absolute;
     width: 4rem;
@@ -100,8 +95,6 @@ body {
 .circle-container:hover {
     background: #ffffff7e;
 }
-
-
 
 .circle {
     width: .8rem;
@@ -120,7 +113,6 @@ body {
     top: 20%;
     left: 74%;
 }
-
 
 main {
     height: 100%;
@@ -176,7 +168,6 @@ main {
     display: inline-grid;
 }
 
-
 .clock-dropdown {
     position: absolute;
     background: white;
@@ -193,7 +184,6 @@ main {
     font-size: calc(0.8 * var(--small));
     opacity: 0;
 }
-
 
 .greeting-container {
     position: relative;
@@ -264,19 +254,6 @@ main {
     background-color: transparent;
     outline: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .quote {
     grid-area: quote;
