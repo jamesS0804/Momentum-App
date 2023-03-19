@@ -25,40 +25,44 @@
         </section>
         <section class="dashboard container">
             <div class="clock container">
-                <span id="hours">23</span>
-                <span>:</span>
-                <span id="minutes">59</span>
-                <span class="sesh">
-                    <span id="seconds">59</span>
-                    <span id="session">AM</span>
-                </span>
-                <span class="circle-container unshow ">
-                    <span class="circle"></span>
-                    <span class="circle"></span>
-                    <span class="circle"></span>
-                </span>
-                <div id="clock-dropdown" class="clock-dropdown">
-                    <label for="clock-format">24-hour format</label>
-                    <input id="clock-format" type="checkbox">
+                <div class="inner-clock">
+                    <span id="hours">23</span>
+                    <span>:</span>
+                    <span id="minutes">59</span>
+                    <span class="sesh">
+                        <span id="seconds">59</span>
+                        <span id="session">AM</span>
+                    </span>
+                    <span id="clock-circle" class="circle-container unshow">
+                        <span id="clock-circle-1" class="circle"></span>
+                        <span id="clock-circle-2" class="circle"></span>
+                        <span id="clock-circle-3" class="circle"></span>
+                    </span>
+                    <div id="clock-dropdown" class="clock-dropdown unshow">
+                        <label id="format-label" for="clock-format">24-hour format</label>
+                        <input id="clock-format" type="checkbox">
+                    </div>
                 </div>
             </div>
             <div class="greeting container">
-                <p class="greeting-container">
-                    Good <span id="time-of-day">morning</span>, <span id="user-name">name</span>
+                <div class="greeting-container">
+                    Good <span id="time-of-day">morning</span>, <span id="user-name" contenteditable="true">name</span>
                     <span id="greeting-circle" class="circle-container unshow">
-                        <span class="circle"></span>
-                        <span class="circle"></span>
-                        <span class="circle"></span>
+                        <span id="greeting-circle-1" class="circle"></span>
+                        <span id="greeting-circle-2" class="circle"></span>
+                        <span id="greeting-circle-3" class="circle"></span>
                     </span>
-                    <div class="name-change">
-                        Edit name
+                    <div id="name-change-id" class="name-change unshow">
+                       <div id="edit-name">Edit Name</div>
                     </div>
-                </p>
+                </div>
             </div>
         </section>
         <section class="todo-list container">
             <div class="todolist-container unshow">
-                <input id="item-list" type="text">
+                <ul id="list">
+                </ul>
+                <input id="input-item" type="text">
             </div>
             <span id="todo-name">Todo</span>
         </section>
