@@ -20,23 +20,38 @@ const todo_list = document.querySelector('.todolist-container')
 const list = document.querySelector('#list')
 const input_item = document.querySelector('#input-item')
 
+let name_input = ""
+
 let i=0;
 
+let todo_container_top = -200
+let todo_container_min_height = 5
+
+function UserInfo(user, tasks) {
+    this.user = user,
+    this.tasks = tasks
+}
+
+let itemArray = new Array()
+
 document.addEventListener('DOMContentLoaded', ()=>{
-    if(localStorage.getItem('hasData')){
+    if(localStorage.name){
         main.classList.remove('unshow')
         overlay_container.classList.add('unshow')
-        user_name.innerText = localStorage.getItem('name')
+        user_name.innerText = localStorage.name
+    }
+    if(localStorage.list_HTML) list.innerHTML = localStorage.list_HTML
+    if(localStorage.list) {
+        itemArray = Array.from(JSON.parse(localStorage.getItem("list")))
     }
 })
 
 function submit(){
-    let name_input = overlay_name.value
+    name_input = overlay_name.value
 
-    localStorage.setItem('name', name_input)
-    localStorage.setItem('hasData', true)
+    localStorage.name = name_input
 
-    user_name.innerText = localStorage.getItem('name')
+    user_name.innerText = localStorage.name
 
     main.classList.remove('unshow')
     overlay_container.classList.add('unshow')
@@ -162,26 +177,28 @@ name_change.addEventListener('click', ()=>{
     user_name.focus()
 })
 
-let itemArray = []
-
-function Item (isChecked,item) {
-    this.isChecked = isChecked
-    this.item = item
-}
-
 function addItem(input) {
-    console.log(list.innerHTML)
+    let index = itemArray.length + 1
     let addedItem = `
         <div>
-            <input type="checkbox">
+            <input id="box${index}" class="task-list" type="checkbox" onclick="clicked(${index})">
             <span>${input}</span>
         </div>
     `
-    let recordItem = new Item(false,input)
+    let recordItem = [index, input]
+    let height_limit = 800
+
+    if(todo_list.clientHeight < height_limit) {
+        todo_container_top += -50
+        todo_container_min_height += 1
+    }
+    
     itemArray.push(recordItem)
-    console.log(itemArray)
-    localStorage.setItem('list', itemArray)
     list.insertAdjacentHTML('beforeend',addedItem)
+    localStorage.setItem('list', JSON.stringify(itemArray))
+    localStorage.setItem('list_HTML', list.innerHTML)
+    todo_list.style.top = `${todo_container_top}%`
+    todo_list.style.minHeight = `${todo_container_min_height}rem`
 }
 input_item.addEventListener('keypress', (e)=>{
     if(e.key === 'Enter'){
@@ -192,6 +209,24 @@ input_item.addEventListener('keypress', (e)=>{
         input_item.value = ""
     }
 })
+
+function clicked(i) {
+    i -= 1
+    let tasks_input = document.getElementsByClassName('task-list')
+    if(tasks_input[i].checked) {
+        tasks_input[i].setAttribute('checked', true)
+        tasks_input[i].nextElementSibling.classList.add('checked')
+    } else {
+        tasks_input[i].removeAttribute('checked')
+        tasks_input[i].nextElementSibling.classList.remove('checked')
+    }
+    localStorage.setItem('list_HTML', list.innerHTML)
+}
+
+// localStorage.removeItem('list')
+// localStorage.removeItem('list_HTML')
+
+
 getCurrentTime()
 getRandomQuote()
 changeBackgroundImage(i)

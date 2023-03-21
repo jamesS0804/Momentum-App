@@ -69,9 +69,9 @@ body {
 }
 .circle-container {
     position: absolute;
-    width: 4rem;
-    height: 4rem;
-    margin: .5rem;
+    width: 3.3rem;
+    height: 3.3rem;
+    margin: .3rem;
     background: transparent;
     border-radius: 50%;
     display: inline-flex;
@@ -83,18 +83,18 @@ body {
     background: #ffffff7e;
 }
 .circle {
-    width: .8rem;
-    height: .8rem;
-    margin: .19rem;
+    width: .6rem;
+    height: .6rem;
+    margin: .15rem;
     background: #fff;
     border-radius: 50%;
 }
 .inner-clock > .circle-container {
-    top: 40%;
+    top: 43%;
     left: 105%;
 }
 .greeting-container > .circle-container {
-    top: 18%;
+    top: 27%;
     left: 103%;
 }
 main {
@@ -234,10 +234,10 @@ main {
 }
 .todolist-container {
     position: absolute;
-    top: -500%;
+    top: -200%;
     right: 10%;
     width: 350%;
-    min-height: 30rem;
+    min-height: 5rem;
     background: white;
     display: flex;
     flex-flow: column wrap;
@@ -246,6 +246,7 @@ main {
     padding: 0.5em;
     border-radius: 2rem;
     color: black;
+    
 }
 .todolist-container::after {
     content: '';
@@ -259,12 +260,15 @@ main {
     border-top-color: #fff;
 }
 #list {
-    border: 2px solid red;
     width: 100%;
+    max-height: 60vh;
     display: flex;
-    flex-flow: column wrap;
+    flex-direction: column;
     justify-content: start;
     align-items: start;
+    padding-left: 10%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 #input-item {
     width: 90%;
@@ -274,7 +278,6 @@ main {
     border-left: transparent;
     border-right: transparent;
     border-bottom: 2px solid rgb(160, 160, 160);
-    border: 2px solid red;
     font-size: var(--small);
 }
 #input-item:focus {
@@ -320,4 +323,8 @@ main {
 }
 .show {
     display: block;
+}
+.checked {
+    text-decoration: line-through;
+    color: rgb(58, 58, 58);
 }
