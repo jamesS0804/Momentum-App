@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/e0da37658b.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="overlay">
@@ -21,7 +22,13 @@
     </div>
     <main class="unshow">
         <section class="widget container">
-            <div class="weather">Widget Here</div>
+            <div class="weather">
+                <img id="weather-icon">
+                <div>
+                    <div id="temperature"></div>
+                    <div id="location"></div>
+                </div>
+            </div>
         </section>
         <section class="dashboard container">
             <div class="clock container">
@@ -60,6 +67,7 @@
         </section>
         <section class="todo-list container">
             <div class="todolist-container unshow">
+                <div>Today</div>
                 <ul id="list">
                 </ul>
                 <input id="input-item" type="text" placeholder="New todo">
@@ -70,7 +78,12 @@
             <p id="text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Beatae, iure!</p>
             <p id="author">John Doe</p>
         </section>
-        <section class="settings container"> Settings </section>
+        <section class="settings container">
+            <select id="timezone">
+                
+            </select>
+            <i class="fa-solid fa-gear fa-lg" style="color: white;" onclick="settings()"></i>
+         </section>
     </main>
 </body>
 </html>
