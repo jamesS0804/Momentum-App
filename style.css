@@ -311,18 +311,13 @@ main {
     content: "-";
 }
 .settings {
+    position: relative;
     grid-area: settings;
     justify-content: start;
     align-items: end;
     text-align: start;
     padding: 1.5rem;
     cursor: pointer;
-}
-.unshow {
-    display: none;
-}
-.show {
-    display: block;
 }
 .task {
     width: 100%;
@@ -368,4 +363,29 @@ main {
 }
 #location {
     font-size: calc(0.8 * var(--small));
+}
+#timezone {
+    background: rgba(0, 0, 0, 0.479);
+    margin-bottom: 1rem;
+    width: 100%;
+    font-size: calc(0.8 * var(--small));
+    color: var(--base-color);
+    padding: 0.3em;
+}
+.timezone-container {
+    position: absolute;
+    top: -200%;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.315);
+    padding: 1em;
+    display: flex;
+    flex-flow: column wrap;
+    place-content: center;
+    gap: 2rem;
+}
+.unshow {
+    display: none;
+}
+.show {
+    display: block;
 }
