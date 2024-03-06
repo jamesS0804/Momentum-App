@@ -326,11 +326,6 @@ main {
     justify-content: start;
     align-items: start;
     flex-grow: 1;
-    /*  */
-    border: 1px solid black;
-    height: fit-content;
-    white-space: normal;
-    /*  */
 }
 .task-list {
     margin-top: 11px;
