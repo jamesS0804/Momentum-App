@@ -9,10 +9,10 @@ Description:
 
 Momentum is a dynamic web application designed to enhance your daily productivity and awareness. It offers several features to streamline your workflow and keep you informed:
 
--Time Display Customization: Switch between 24-hour and 12-hour time formats to match your preferences.
--Location Awareness: Displays your current city name, providing a sense of place.
--Weather Updates: Presents relevant weather information for your location, helping you prepare for your day.
--Simple To-Do List: Manage your tasks efficiently. Add, edit, and check off items as you complete them.
+*Time Display Customization: Switch between 24*hour and 12-hour time formats to match your preferences.
+*Location Awareness: Displays your current cit* name, providing a sense of place.
+*Weather Updates: Presents relevant weather in*ormation for your location, helping you prepare for your day.
+*Simple To-Do List: Manage your tasks efficien*ly. Add, edit, and check off items as you complete them.
 
 Getting Started:
 
