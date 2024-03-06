@@ -23,6 +23,7 @@ body {
     background-position: center;
     font-size: var(--small);
     color: var(--font-color);
+    transition: background-image 2s ease-in-out;
 }
 .overlay {
     width: 100%;
@@ -234,9 +235,9 @@ main {
 }
 .todolist-container {
     position: absolute;
-    top: -230%;
+    bottom: 5.5rem;
     right: 10%;
-    width: 350%;
+    width: 35rem;
     min-height: 5rem;
     background: white;
     display: flex;
@@ -246,7 +247,6 @@ main {
     padding: 0.5em;
     border-radius: 2rem;
     color: black;
-    
 }
 .todolist-container::after {
     content: '';
@@ -254,7 +254,7 @@ main {
 	width: 0;
 	height: 0;
     top: 100%;
-	left: 80%;
+	left: 90%;
 	border: .75rem solid transparent;
 	border-bottom: none;
     border-top-color: #fff;
@@ -269,6 +269,7 @@ main {
     padding-left: 5%;
     overflow-x: hidden;
     overflow-y: auto;
+    flex-grow: 1;
 }
 #input-item {
     width: 90%;
@@ -324,6 +325,12 @@ main {
     display: flex;
     justify-content: start;
     align-items: start;
+    flex-grow: 1;
+    /*  */
+    border: 1px solid black;
+    height: fit-content;
+    white-space: normal;
+    /*  */
 }
 .task-list {
     margin-top: 11px;
@@ -331,6 +338,9 @@ main {
 .item-container {
     position: relative;
     width: 80%;
+    display: block;
+    height: fit-content;
+    white-space: normal;
 }
 .item {
     position: absolute;
