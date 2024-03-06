@@ -420,5 +420,5 @@ getUserTimeZone();
 setRandomQuote();
 getCurrentTime();
 setWeatherData();
-// changeBackgroundImage();
+changeBackgroundImage();
 onClickOutside();
