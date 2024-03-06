@@ -1,6 +1,10 @@
 # Momentum-App
 Momentum App
 
+![Screenshot 2024-03-06 170034](https://github.com/jamesS0804/Momentum-App/assets/127102560/16fe667b-f7e6-4eb9-b902-9a4bb85432e0)
+![Screenshot 2024-03-06 170028](https://github.com/jamesS0804/Momentum-App/assets/127102560/00f08b28-0e7f-4d5a-855d-131f5e035d78)
+
+
 Description:
 
 Momentum is a dynamic web application designed to enhance your daily productivity and awareness. It offers several features to streamline your workflow and keep you informed:
